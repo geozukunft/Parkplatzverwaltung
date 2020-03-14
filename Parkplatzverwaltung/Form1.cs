@@ -15,25 +15,14 @@ namespace Parkplatzverwaltung
     {
         bool[] parkinglot = new bool[10] { false, false, false, false, false, false, false, false, false, false };
         int cars = 0;
-
-        FileInfo earingsFile;
+        string datafile;
 
         public Parkplatzverwaltung()
         {
             InitializeComponent();
-            lboCarPool.Items.Add("Audi");
-            lboCarPool.Items.Add("BMW");
-            lboCarPool.Items.Add("VW");
-            lboCarPool.Items.Add("Porsche");
-            lboCarPool.Items.Add("Skoda");
-            lboCarPool.Items.Add("Peugeot");
-            lboCarPool.Items.Add("SchmidiCARS");
-            lboCarPool.Items.Add("BlitzCARS");
-            lboCarPool.Items.Add("eulencar");
-            cmdDriveOut.Enabled = false;
             BackColor = Color.Green;
+            init();
 
-            
         }
 
         private void cmdAddCar_Click(object sender, EventArgs e)
@@ -134,11 +123,31 @@ namespace Parkplatzverwaltung
             int earnings = cars * 10;
 
             lblEarnings.Text = "Heute wurden: " + earnings + "€ eingenommen";
+            
         }
 
         private void OpenFile_toolStripMenuItem_Click(object sender, EventArgs e)
         {
-            earingsFile = OpenFileDialog;
+            OpenFileDialog ofdData = new OpenFileDialog()
+            {
+                InitialDirectory = @"C:\",
+                Title = "Datei öffnen",
+
+                DefaultExt = "csv",
+                Filter = "CSV Datei (*.csv)|*.csv|Alle Dateien (*.*)|*.*",
+                FilterIndex = 0,
+
+                CheckFileExists = true,
+                CheckPathExists = true,
+
+                Multiselect = false
+            };
+
+            if(ofdData.ShowDialog() == DialogResult.OK)
+            {
+                lblFileName.Text = ofdData.FileName;
+                datafile = ofdData.FileName;
+            }
         }
     }
 }
