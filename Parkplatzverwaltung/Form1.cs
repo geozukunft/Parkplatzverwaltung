@@ -16,6 +16,7 @@ namespace Parkplatzverwaltung
         bool[] parkinglot = new bool[10] { false, false, false, false, false, false, false, false, false, false };
         int cars = 0;
         string datafile;
+        string dataStream;
 
         public Parkplatzverwaltung()
         {
@@ -123,6 +124,8 @@ namespace Parkplatzverwaltung
             int earnings = cars * 10;
 
             lblEarnings.Text = "Heute wurden: " + earnings + "€ eingenommen";
+
+            dataStream = dataStream + DateTime.Now.ToShortDateString() + "," + earnings + "\n";
             
         }
 
