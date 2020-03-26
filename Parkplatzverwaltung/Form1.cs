@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Collections;
 
 namespace Parkplatzverwaltung
 {
@@ -16,7 +17,7 @@ namespace Parkplatzverwaltung
         bool[] parkinglot = new bool[10] { false, false, false, false, false, false, false, false, false, false };
         int cars = 0;
         string datafile;
-        string dataStream;
+        ArrayList dataStream = new ArrayList();
 
         public Parkplatzverwaltung()
         {
@@ -85,6 +86,7 @@ namespace Parkplatzverwaltung
             if(lboParkingLot.Items.Count == 10)
             {
                 BackColor = Color.Red;
+                cmdDriveIn.Enabled = false;
                
             }
             if(lboParkingLot.Items.Count > 0)
@@ -122,11 +124,12 @@ namespace Parkplatzverwaltung
         private void cmdDailyEarnings_Click(object sender, EventArgs e)
         {
             int earnings = cars * 10;
-
+            
             lblEarnings.Text = "Heute wurden: " + earnings + "€ eingenommen";
 
-            dataStream = dataStream + DateTime.Now.ToShortDateString() + "," + earnings + "\n";
-            
+            dataStream.Add(DateTime.Now.ToShortDateString() + "," + earnings);
+
+            cars = 0;
         }
 
         private void OpenFile_toolStripMenuItem_Click(object sender, EventArgs e)
@@ -152,5 +155,60 @@ namespace Parkplatzverwaltung
                 datafile = ofdData.FileName;
             }
         }
+
+        private void speichernToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            speichern();
+            
+        }
+
+        private void speichernSchließenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (datafile == null)
+            {
+                MessageBox.Show("Keine Datei zum speichern ausgwählt bitte öffnen sie zuerst eine Datei!");
+            }
+            else
+            {
+                using (StreamWriter file = File.AppendText(datafile))
+                {
+                    foreach (string line in dataStream)
+                        file.WriteLine(line);
+
+                    dataStream.Clear();
+                }
+
+                Application.Exit();
+            }
+
+        }
+
+        private void schließenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Sind Sie sicher daas sie das Programm beenden möchten ohne vorher zu speichern?", "Schließen ohne Speichern", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void speichern()
+        {
+            if (datafile == null)
+            {
+                MessageBox.Show("Keine Datei zum speichern ausgwählt bitte öffnen sie zuerst eine Datei!");
+            }
+            else
+            {
+                using (StreamWriter file = File.AppendText(datafile))
+                {
+                    foreach (string line in dataStream)
+                        file.WriteLine(line);
+
+                    dataStream.Clear();
+                }
+            }
+        }
+
     }
 }

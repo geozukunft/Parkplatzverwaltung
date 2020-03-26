@@ -173,18 +173,21 @@
             this.speichernToolStripMenuItem.Name = "speichernToolStripMenuItem";
             this.speichernToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.speichernToolStripMenuItem.Text = "Speichern";
+            this.speichernToolStripMenuItem.Click += new System.EventHandler(this.speichernToolStripMenuItem_Click);
             // 
             // speichernSchließenToolStripMenuItem
             // 
             this.speichernSchließenToolStripMenuItem.Name = "speichernSchließenToolStripMenuItem";
             this.speichernSchließenToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.speichernSchließenToolStripMenuItem.Text = "Speichern und Schließen";
+            this.speichernSchließenToolStripMenuItem.Click += new System.EventHandler(this.speichernSchließenToolStripMenuItem_Click);
             // 
             // schließenToolStripMenuItem
             // 
             this.schließenToolStripMenuItem.Name = "schließenToolStripMenuItem";
             this.schließenToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.schließenToolStripMenuItem.Text = "Schließen";
+            this.schließenToolStripMenuItem.Click += new System.EventHandler(this.schließenToolStripMenuItem_Click);
             // 
             // lblFileName
             // 
@@ -234,8 +237,18 @@
             lboCarPool.Items.Add("BlitzCARS");
             lboCarPool.Items.Add("eulencar");
             cmdDriveOut.Enabled = false;
+            lboParkingLot.Items.Add(" 1: ");
+            lboParkingLot.Items.Add(" 2: ");
+            lboParkingLot.Items.Add(" 3: ");
+            lboParkingLot.Items.Add(" 4: ");
+            lboParkingLot.Items.Add(" 5: ");
+            lboParkingLot.Items.Add(" 6: ");
+            lboParkingLot.Items.Add(" 7: ");
+            lboParkingLot.Items.Add(" 8: ");
+            lboParkingLot.Items.Add(" 9: ");
+            lboParkingLot.Items.Add("10: ");
 
-           
+
         }
 
         #endregion
