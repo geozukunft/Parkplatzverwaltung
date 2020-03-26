@@ -52,7 +52,7 @@
             // 
             this.lboCarPool.FormattingEnabled = true;
             this.lboCarPool.Location = new System.Drawing.Point(34, 47);
-            this.lboCarPool.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lboCarPool.Margin = new System.Windows.Forms.Padding(2);
             this.lboCarPool.Name = "lboCarPool";
             this.lboCarPool.Size = new System.Drawing.Size(214, 238);
             this.lboCarPool.TabIndex = 0;
@@ -61,7 +61,7 @@
             // 
             this.lboParkingLot.FormattingEnabled = true;
             this.lboParkingLot.Location = new System.Drawing.Point(442, 47);
-            this.lboParkingLot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lboParkingLot.Margin = new System.Windows.Forms.Padding(2);
             this.lboParkingLot.Name = "lboParkingLot";
             this.lboParkingLot.Size = new System.Drawing.Size(207, 238);
             this.lboParkingLot.TabIndex = 1;
@@ -69,7 +69,7 @@
             // cmdDriveIn
             // 
             this.cmdDriveIn.Location = new System.Drawing.Point(274, 47);
-            this.cmdDriveIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdDriveIn.Margin = new System.Windows.Forms.Padding(2);
             this.cmdDriveIn.Name = "cmdDriveIn";
             this.cmdDriveIn.Size = new System.Drawing.Size(144, 41);
             this.cmdDriveIn.TabIndex = 2;
@@ -80,7 +80,7 @@
             // cmdDriveOut
             // 
             this.cmdDriveOut.Location = new System.Drawing.Point(274, 104);
-            this.cmdDriveOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdDriveOut.Margin = new System.Windows.Forms.Padding(2);
             this.cmdDriveOut.Name = "cmdDriveOut";
             this.cmdDriveOut.Size = new System.Drawing.Size(144, 45);
             this.cmdDriveOut.TabIndex = 3;
@@ -91,15 +91,15 @@
             // txtCarName
             // 
             this.txtCarName.Location = new System.Drawing.Point(34, 300);
-            this.txtCarName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCarName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCarName.Name = "txtCarName";
-            this.txtCarName.Size = new System.Drawing.Size(52, 20);
+            this.txtCarName.Size = new System.Drawing.Size(212, 20);
             this.txtCarName.TabIndex = 4;
             // 
             // cmdAddCar
             // 
             this.cmdAddCar.Location = new System.Drawing.Point(34, 334);
-            this.cmdAddCar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdAddCar.Margin = new System.Windows.Forms.Padding(2);
             this.cmdAddCar.Name = "cmdAddCar";
             this.cmdAddCar.Size = new System.Drawing.Size(212, 43);
             this.cmdAddCar.TabIndex = 5;
@@ -110,7 +110,7 @@
             // cmdDeleteCar
             // 
             this.cmdDeleteCar.Location = new System.Drawing.Point(34, 393);
-            this.cmdDeleteCar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdDeleteCar.Margin = new System.Windows.Forms.Padding(2);
             this.cmdDeleteCar.Name = "cmdDeleteCar";
             this.cmdDeleteCar.Size = new System.Drawing.Size(212, 47);
             this.cmdDeleteCar.TabIndex = 6;
@@ -121,7 +121,7 @@
             // cmdDailyEarnings
             // 
             this.cmdDailyEarnings.Location = new System.Drawing.Point(442, 334);
-            this.cmdDailyEarnings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdDailyEarnings.Margin = new System.Windows.Forms.Padding(2);
             this.cmdDailyEarnings.Name = "cmdDailyEarnings";
             this.cmdDailyEarnings.Size = new System.Drawing.Size(205, 43);
             this.cmdDailyEarnings.TabIndex = 8;
@@ -215,7 +215,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Parkplatzverwaltung";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
@@ -237,18 +237,6 @@
             lboCarPool.Items.Add("BlitzCARS");
             lboCarPool.Items.Add("eulencar");
             cmdDriveOut.Enabled = false;
-            lboParkingLot.Items.Add(" 1: ");
-            lboParkingLot.Items.Add(" 2: ");
-            lboParkingLot.Items.Add(" 3: ");
-            lboParkingLot.Items.Add(" 4: ");
-            lboParkingLot.Items.Add(" 5: ");
-            lboParkingLot.Items.Add(" 6: ");
-            lboParkingLot.Items.Add(" 7: ");
-            lboParkingLot.Items.Add(" 8: ");
-            lboParkingLot.Items.Add(" 9: ");
-            lboParkingLot.Items.Add("10: ");
-
-
         }
 
         #endregion

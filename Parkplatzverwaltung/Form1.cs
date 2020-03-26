@@ -107,7 +107,16 @@ namespace Parkplatzverwaltung
             }
             else
             {
-                parkinglot[lboParkingLot.SelectedIndex] = false;
+                int Index = lboParkingLot.SelectedIndex;
+                for(int i = 0; i <= Index; i++)
+                {
+                    if (parkinglot[i] == false)
+                    {
+                        Index++;
+                    }
+                }
+
+                parkinglot[Index] = false;
                 lboParkingLot.Items.RemoveAt(lboParkingLot.SelectedIndex);
             }
 
@@ -118,6 +127,7 @@ namespace Parkplatzverwaltung
             else if(lboParkingLot.Items.Count < 10)
             {
                 BackColor = Color.Green;
+                cmdDriveIn.Enabled = true;
             }
         }
 
